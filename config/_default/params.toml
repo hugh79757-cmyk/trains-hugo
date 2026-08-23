@@ -1,24 +1,44 @@
 enableSearch = true
+colorScheme = "forest"
+defaultAppearance = "light"
+autoSwitchAppearance = false
 
-[article]
-  showReadingTime = false
-  showWordCount = false
-  showDate = true
-  showTableOfContents = true
-  showRelatedContent = false
-  showTaxonomies = true
-  showHero = true
-  heroStyle = "basic"
+[header]
+  layout = "basic"
+  showTitle = true
 
 [footer]
+  showCopyright = true
   showThemeAttribution = false
   showScrollToTop = true
 
 [homepage]
-  layout = "card"
+  layout = "background"
   showRecent = true
   showRecentItems = 12
 
 [list]
-  showCards = true
   showSummary = true
+  showCards = true
+  groupByYear = false
+
+[taxonomy]
+  showTermCount = true
+  showBreadcrumbs = true
+
+[advertisement]
+  adsense = "ca-pub-8772455780561463"
+  topSlot = "6685009950"
+  inArticleSlot = "6685009950"
+
+[article]
+  showHero = false
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  showWordCount = false
+  showReadingTime = false
+  showDate = true
+  showAuthor = false
+  showBreadcrumbs = true
+  showTableOfContents = false
+  showRelatedContent = false

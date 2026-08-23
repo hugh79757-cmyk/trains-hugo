@@ -1,0 +1,29 @@
+{{/* travel-hugo 커스텀 hero: 배경 이미지 제거 + 파스텔 톤 (tour1.rotcha.kr) */}}
+<article class="prose dark:prose-invert max-w-full">
+  <div class="relative">
+    <div class="mx-auto max-w-4xl px-4 pt-16 pb-12 text-center">
+      <div class="inline-block rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-teal-50 px-8 py-10">
+        {{ with .Site.Params.Author.image }}
+          {{ $authorImage := resources.Get . }}
+          {{ if $authorImage }}
+            {{ $final := $authorImage.Fill "288x288 q96" }}
+            <img class="mb-4 h-20 w-20 rounded-full border-2 border-emerald-200 shadow-sm" width="144" height="144" alt="{{ $.Site.Params.Author.name | default `Author` }}" src="{{ $final.RelPermalink }}">
+          {{ end }}
+        {{ end }}
+        <h1 class="mb-2 text-4xl font-extrabold text-emerald-900 tracking-tight">
+          {{ .Site.Params.Author.name | default .Site.Title }}
+        </h1>
+        {{ with .Site.Params.Author.headline }}
+          <h2 class="mt-0 mb-4 text-lg font-medium text-emerald-700">
+            {{ . | markdownify }}
+          </h2>
+        {{ end }}
+        <div class="mt-4 text-2xl text-emerald-600/60"></div>
+        <section class="prose prose-sm prose-emerald dark:prose-invert max-w-md mx-auto">{{ .Content }}</section>
+      </div>
+    </div>
+  </div>
+</article>
+<section>
+  {{ partial "recent-articles/main.html" . }}
+</section>

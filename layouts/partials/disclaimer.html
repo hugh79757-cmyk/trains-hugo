@@ -1,0 +1,15 @@
+<!--
+  nomad-hugo: intentionally a no-op.
+
+  layouts/_default/single.html:58 calls this partial, but no version of it ever
+  existed in this site or in the blowfish theme, so `hugo` failed with
+  "partial not found" and the site stopped building.
+
+  Per-post legal disclosures are already emitted by the ETAP pipeline
+  (pipelines/etap/quality_guard.py appends a <div class="etap-disclaimer-card">
+  to each post body — present in 151 of 157 posts here), so rendering anything
+  from this partial would duplicate that box.
+
+  ponytail: if a site-wide banner is ever wanted, put it here; otherwise leave
+  this file empty apart from this comment.
+-->
